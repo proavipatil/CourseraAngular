@@ -1,16 +1,45 @@
 <!DOCTYPE html>
-<html ng-app='myFirstApp'>
+<html ng-app="LunchCheck">
   <head>
     <meta charset="utf-8">
+    <title>Lunch Check</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+
+      .message {
+        font-weight: bold;
+        margin-top: 15px;
+      }
+
+    </style>
+  </head>
+  <body ng-controller="LunchCheckController">
+    <h1>Lunch Check</h1>
+    <div>
+      <label for="lunchItems">Enter comma-separated items you usually eat for lunch:</label>
+      <input type="text" id="lunchItems" ng-model="lunchItems">
+    </div>
+
+    <button ng-click="checkLunch()">Check If Too Much</button>
+
+    <div class="message">
+      <!-- Show message based on the condition -->
+      <span ng-if="message">{{ message }}</span>
+    </div>
+
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>My first AngularJS App</title>
-  </head>
-  <body>
-    <h1>My First AngularJS App 1</h1>
-    <div ng-controller="MyFirstController">
-      <input type="text" ng-model="name">
-      Inside my input is: {{name}}
-    </div>
   </body>
 </html>
