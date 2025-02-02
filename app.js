@@ -1,11 +1,15 @@
 (function () {
 'use strict';
 
-x='hello';
-
 angular.module('myFirstApp',[])
 
-.controller('MyFirstController',function () {
+.controller('MyFirstController',function ($scope) {
+
+  $scope.name = "Jose Marianosss";
+  $scope.sayHello = function () {
+    return "Hello Coursera"
+
+  }
 
 });
 
