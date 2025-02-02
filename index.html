@@ -3,27 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Lunch Check</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
-      }
-
-      input {
-        margin-bottom: 10px;
-      }
-
-      button {
-        margin-top: 10px;
-      }
-
-      .message {
-        font-weight: bold;
-        margin-top: 15px;
-      }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body ng-controller="LunchCheckController">
     <h1>Lunch Check</h1>
@@ -35,7 +15,7 @@
     <button ng-click="checkLunch()">Check If Too Much</button>
 
     <div class="message">
-    
+
       <span ng-if="message">{{ message }}</span>
     </div>
 
