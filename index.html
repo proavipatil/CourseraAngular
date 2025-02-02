@@ -7,17 +7,19 @@
   </head>
   <body ng-controller="LunchCheckController">
     <h1>Lunch Check</h1>
-    <div>
+    <div class="container">
       <label for="lunchItems">Enter comma-separated items you usually eat for lunch:</label>
       <input type="text" id="lunchItems" ng-model="lunchItems">
+
+      <button ng-click="checkLunch()">Check If Too Much</button>
+
+      <div class="message">
+        <span ng-if="message" ng-class="{'enjoy': message === 'Enjoy!', 'too-much': message === 'Too much!', 'error': message === 'Please enter data first'}">
+          {{ message }}
+        </span>
+      </div>
     </div>
 
-    <button ng-click="checkLunch()">Check If Too Much</button>
-
-    <div class="message">
-
-      <span ng-if="message">{{ message }}</span>
-    </div>
 
     <script src="angular.min.js"></script>
     <script src="app.js"></script>

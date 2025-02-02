@@ -3,20 +3,20 @@ body {
   font-family: 'Arial', sans-serif;
   text-align: center;
   margin-top: 50px;
-  background-color: #f0f8ff; /* Soft background color */
+  background-color: #f0f8ff;
   color: #333;
 }
 
 h1 {
-  color: #ff6347; /* Tomato color */
+  color: #ff6347;
   font-size: 2.5em;
   margin-bottom: 20px;
 }
 
 .container {
-  background-color: #ffffff; /* White background for the form */
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 40px;
   display: inline-block;
 }
@@ -25,19 +25,19 @@ input[type="text"] {
   width: 80%;
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid #ff6347; /* Tomato border */
+  border: 2px solid #ff6347;
   border-radius: 5px;
   font-size: 1.2em;
   text-align: center;
 }
 
 input[type="text"]:focus {
-  border-color: #ff4500; /* Darker red border on focus */
+  border-color: #ff4500;
   outline: none;
 }
 
 button {
-  background-color: #ff6347; /* Tomato background */
+  background-color: #ff6347;
   color: white;
   border: none;
   padding: 15px 25px;
@@ -49,7 +49,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff4500; /* Darker tomato color on hover */
+  background-color: #ff4500;
 }
 
 .message {
@@ -68,15 +68,4 @@ button:hover {
 
 .error {
   color: #ff9800; /* Orange color for "Please enter data first" */
-}
-
-.image-container {
-  margin-top: 20px;
-}
-
-.image-container img {
-  width: 200px;
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid #ff6347; /* Tomato border around image */
 }
