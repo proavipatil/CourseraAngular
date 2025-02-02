@@ -1,11 +1,11 @@
 (function () {
   'use strict';
 
-  // Declare the AngularJS module
+
   angular.module('LunchCheck', [])
     .controller('LunchCheckController', LunchCheckController);
 
-  // Controller function
+
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController($scope) {
