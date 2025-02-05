@@ -1,37 +1,73 @@
-(function () {
-  'use strict';
+var app = angular.module('portfolioApp', ['ngRoute']);  // Initialize Angular app with ngRoute module
 
-
-  angular.module('LunchCheck', [])
-    .controller('LunchCheckController', LunchCheckController);
-
-
-  LunchCheckController.$inject = ['$scope'];
-
-  function LunchCheckController($scope) {
-    $scope.lunchItems = '';  // Variable to hold the items entered by the user
-    $scope.message = ''; // Variable to display the result message
-
-    // Function to check if the number of items entered is too much
-    $scope.checkLunch = function () {
-      if ($scope.lunchItems === '') {
-        // If the input is empty
-        $scope.message = 'Please enter data first';
-      } else {
-        // Split the input string by commas and filter out empty items
-        var items = $scope.lunchItems.split(',').filter(function (item) {
-          return item.trim() !== '';  // Filter out empty or whitespace items
+// Configure routing
+app.config(function($routeProvider) {
+    $routeProvider
+        .when('/about', {
+            templateUrl: 'about.html',   // Template path for About Me page
+            controller: 'AboutController'  // Controller for About Me page
+        })
+        .when('/projects', {
+            templateUrl: 'projects.html',  // Template path for Projects page
+            controller: 'ProjectsController'  // Controller for Projects page
+        })
+        .when('/contact', {
+            templateUrl: 'contact.html',  // Template path for Contact page
+            controller: 'ContactController'  // Controller for Contact page
+        })
+        .otherwise({
+            redirectTo: '/about'  // Default route is /about
         });
+});
 
-        if (items.length <= 3) {
-          // If the number of items is 3 or less
-          $scope.message = 'Enjoy!';
-        } else {
-          // If the number of items is more than 3
-          $scope.message = 'Too much!';
+// Controllers to bind data to the views
+app.controller('AboutController', function($scope) {
+    $scope.objective = "Passionate software engineering student seeking an internship to apply and enhance my programming skills.";
+    $scope.education = "Bachelor of Science in Computer Science, University of Europe for Applied Sciences, Berlin (Expected Graduation: March 2026).";
+    $scope.skills = [
+        { name: 'Python', icon: 'Python.svg' },
+        { name: 'Java', icon: 'Java.svg' },
+        { name: 'JavaScript', icon: 'JS.svg' },
+        { name: 'C', icon: 'C.svg' },
+        { name: 'C++', icon: 'CPlusPlus.svg' },
+        { name: 'Git', icon: 'git.svg' },
+        { name: 'HTML', icon: 'html.svg' },
+        { name: 'CSS', icon: 'css.svg' }
+    ];
+    $scope.frameworks=[
+            { name: "React", icon: "reacrt.svg" },
+            { name: "AngularJS", icon: "angular.svg" },
+            { name: "Node.js", icon: "nose.svg" },
+            { name: "Spring", icon: "spring.svg" }
+    ];
+    $scope.databases=[
+            { name: "MySQL", icon: "mysql.svg" },
+            { name: "MongoDB", icon: "mongodb.svg" }
+    ];
+
+});
+
+app.controller('ProjectsController', function($scope) {
+    $scope.projects = [
+        {
+            title: "Weather App",
+            description: "A user-friendly weather app that displays real-time data (temperature, humidity, etc.) using API calls for current and forecasted weather."
+        },
+        {
+            title: "Tic Tac Toe",
+            description: "I developed a Tic-Tac-Toe game with interactive gameplay, win detection, and a restart feature. 🎮✨"
+        },
+        {
+            title: "Bucket List",
+            description: "A user-friendly list bicket app that displays real-time data (temperature, humidity, etc.) using API calls for current and forecasted weather."
         }
-      }
-    };
-  }
+    ];
+});
 
-})();
+app.controller('ContactController', function($scope) {
+    $scope.contactInfo = {
+        phone: "+49 1515 3924850",
+        email: "josemarianoludenalimas@gmail.com",
+        linkedin: "https://www.linkedin.com/in/jose-mariano-ludeña-limas-023b5a139"
+    };
+});

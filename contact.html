@@ -1,0 +1,16 @@
+<section class="contact">
+    <h2>Contact Information</h2>
+    <p>Phone: {{ contactInfo.phone }}</p>
+    <p>Email: {{ contactInfo.email }}</p>
+    <p>LinkedIn: <a href="{{ contactInfo.linkedin }}" target="_blank">{{ contactInfo.linkedin }}</a></p>
+</section>
+<div>
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/josemarianoludenalimas@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+</div>

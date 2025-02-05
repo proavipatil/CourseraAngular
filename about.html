@@ -1,0 +1,32 @@
+<section class="about-me">
+    <h2>About Me</h2>
+    <p>{{ objective }}</p>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+
+    <h3>Education</h3>
+    <p>{{ education }}</p>
+    <img src="university.png" alt="university" class="uni-pic">
+
+    <div class="skills" ng-controller="AboutController">
+        <h2>Skills</h2>
+        <ul>
+            <li ng-repeat="skill in skills">
+                <img ng-src="{{ skill.icon }}" alt="{{ skill.name }} Logo"> {{ skill.name }}
+            </li>
+        </ul>
+
+        <h2>Frameworks & Tools</h2>
+        <ul>
+            <li ng-repeat="framework in frameworks">
+                <img ng-src="{{ framework.icon }}" alt="{{ framework.name }} Logo"> {{ framework.name }}
+            </li>
+        </ul>
+
+        <h2>Databases</h2>
+        <ul>
+            <li ng-repeat="database in databases">
+                <img ng-src="{{ database.icon }}" alt="{{ database.name }} Logo"> {{ database.name }}
+            </li>
+        </ul>
+    </div>
+</section>
