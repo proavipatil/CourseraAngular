@@ -66,8 +66,8 @@ app.controller('ProjectsController', function($scope) {
 
 app.controller('ContactController', function($scope) {
     $scope.contactInfo = {
-        phone: "+49 1515 3924850",
-        email: "josemarianoludenalimas@gmail.com",
-        linkedin: "https://www.linkedin.com/in/jose-mariano-ludeña-limas-023b5a139"
+        phone: "+91 869858785965",
+        email: "avicpatil@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ItsAviPatil"
     };
 });
